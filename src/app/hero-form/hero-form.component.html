@@ -1,8 +1,9 @@
 <h1>Hero Form</h1>
 
-<form #heroForm="ngForm" (ngSubmit)="submit(heroForm)">
+<form appPasswordMatch #heroForm="ngForm" (ngSubmit)="submit(heroForm)">
   <label>Name</label>
   <input
+    appForbiddenValidator
     type="text"
     required
     #name="ngModel"
@@ -11,6 +12,7 @@
   />
   <div *ngIf="name.invalid && (name.dirty || name.touched)">
     <p *ngIf="name.errors?.['required']">Name is required</p>
+    <p *ngIf="name.errors?.['isForbidden']">This name is not accepted</p>
   </div>
   <br />
   <label>Age</label>
@@ -29,5 +31,15 @@
   <br />
   <br />
 
+  <div>
+    <label>Password</label>
+    <input type="text" [(ngModel)]="model.password" name="password" />
+  </div>
+
+  <div>
+    <label>Cofirm Password</label>
+    <input type="text" [(ngModel)]="model.confirm" name="confirm" />
+  </div>
+  <p *ngIf="heroForm.errors?.['nomatch']">Password not matching</p>
   <button type="submit">Submit</button>
 </form>

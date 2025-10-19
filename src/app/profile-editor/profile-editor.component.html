@@ -3,12 +3,29 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="profilForm">
   <div>
     <label>First Name</label>
-    <input type="text" formControlName="firstName" />
+    <input type="text" formControlName="firstName" required />
+  </div>
+  <div>
+    <p *ngIf="firstName?.errors?.['isForbidden']">This name is Forbidden</p>
+  </div>
+  <div>
+    <p *ngIf="firstName?.errors?.['required']">Firstname is required</p>
+  </div>
+
+  <div>
+    <p *ngIf="firstName?.errors?.['maxlength']">Maximum Length 5</p>
+  </div>
+  <div>
+    <p *ngIf="firstName?.errors?.['minlength']">Minimum Length 5</p>
   </div>
 
   <div>
     <label>Last Name</label>
-    <input type="text" formControlName="lastName" />
+    <input type="text" formControlName="lastName" required />
+  </div>
+
+  <div>
+    <p *ngIf="lastName?.errors?.['required']">Lastname is required</p>
   </div>
   <div formGroupName="address">
     <div>
@@ -28,5 +45,14 @@
       <input type="text" [formControlName]="i" />
     </div>
   </div>
+  <div>
+    <label>Password</label>
+    <input type="text" formControlName="password" />
+  </div>
+  <div>
+    <label>Password Confirmation</label>
+    <input type="text" formControlName="confirm" />
+  </div>
+  <p *ngIf="profilForm.errors?.['nomatch']">Password not matching</p>
   <button type="submit">Submit</button>
 </form>

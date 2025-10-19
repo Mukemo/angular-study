@@ -11,6 +11,11 @@ import { AdminModule } from './admin/admin.module';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { ForbiddenValidatorDirective } from './forbidden-validator.directive';
+import { PasswordMatchDirective } from './password-match.directive';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { WorkHistoryComponent } from './work-history/work-history.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,11 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
     HeroFormComponent,
     NameEditorComponent,
     ProfileEditorComponent,
+    ForbiddenValidatorDirective,
+    PasswordMatchDirective,
+    HomeComponent,
+    AboutComponent,
+    WorkHistoryComponent,
   ],
   imports: [
     BrowserModule,

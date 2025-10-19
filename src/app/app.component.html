@@ -2,6 +2,22 @@
 <app-login></app-login> -->
 
 <h1>App Component</h1>
-<app-hero-form></app-hero-form>
+<!-- <app-hero-form></app-hero-form> -->
 <!-- <app-profile-editor /> -->
-<router-outlet />
+<nav>
+  <ul>
+    <li>
+      <a
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/"
+        >Home</a
+      >
+    </li>
+    <li>
+      <!-- <a routerLinkActive="active" [routerLink]="['/about', id]">About</a> -->
+      <button (click)="routeToAbout()">Go to About</button>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

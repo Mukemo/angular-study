@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class HeroFormComponent implements OnInit {
   powers = ['Super Sterngth', 'Invisibility', 'Super Speed', 'Time Travel'];
-  model = new Hero(0, '', '');
+  model = new Hero(0, '', '', '', '');
   constructor() {}
 
   ngOnInit(): void {}
